@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this,LoginActivity.class));
         });
+
         binding.searchBtn.setOnClickListener(v -> {
             String text=binding.searchEdt.getText().toString();
             if (!text.isEmpty()){
@@ -61,6 +62,8 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        binding.cartBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
     }
 
     private void initBestFood() {
